@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "#Вхолодильнике",
+  "short_name": "#Вхолодильнике",
+  "version": "standarapp.holodos.rus",
+  "description": "Приложение для контроля содержимого в холодильнике.",
+  "author": "StandarApp Company",
+  "icons": [],
+  "start_url": "index.html",
+  "theme_color": "#2196f3"
+}

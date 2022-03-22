@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags-->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <!-- Color theme for statusbar -->
+      <meta name="theme-color" content="#2196f3">
+      <!-- Your app title -->
+      <title>#Вхолодильнике</title>
+      <!-- Path to Framework7 Library Bundle CSS -->
+      <link rel="stylesheet" href="css/framework7.bundle.min.css">
+      <!-- Path to your custom app styles-->
+      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/framework7-icons.css">
+   </head>
+   <body>
+      <!-- App root element -->
+      <div id="app">
+         <!-- Statusbar overlay -->
+         <div class="statusbar"></div>
+         <!-- Your main view, should have "view-main" class -->
+         <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="home" class="page">
+               <!-- Top Navbar -->
+               <div class="navbar">
+                  <div class="navbar-inner navbar-colored" id="navbar">
+                     <div class="title">#ВХолодильнике</div>
+                     <div class="right">
+                        <a href="#" class="link popup-open" data-popup=".popup-settings"><i class="f7-icons" style="color:#f2f2f2;">settings</i></a>
+                     </div>
+                  </div>
+               </div>
+               <!-- Additional "tabbar" class -->
+               <div class="toolbar tabbar toolbar-bottom ">
+                  <div class="toolbar-inner">
+                     <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+                     <a href="#tab-1" class="tab-link tab-link-active">В холодильнике</a>
+                     <a href="#tab-2" class="tab-link">Список покупок</a>
+                  </div>
+               </div>
+               <!-- Tabs -->
+               <div class="tabs">
+                  <!-- First tab, active -->
+                  <div class="page-content tab tab-active tab-padding" id="tab-1">
+                     <div class="block-title">Уже в холодильнике</div>
+                     <div class="list media-list inset">
+                        <ul id="ProductList">
+                        </ul>
+                     </div>
+                     <!-- Add new HOLODOS item START -->
+                     <a class="popup-open" href="#" data-popup=".my-popup">
+                     <button class="button button-large button-raised button-fill color-blue" style="width:80%;margin:auto;">Добавить</button>
+                     </a>
+                     <div class="popup my-popup">
+                        <div class="view">
+                           <div class="page">
+                              <div class="navbar app-navbar-color ClassForRemove" id="popup-navbar">
+                                 <div class="navbar-inner">
+                                    <div class="left">
+                                       <a href="#" class="link popup-close" style="color:#f2f2f2;"><i class="icon icon-back"></i>&nbsp;Назад</a>
+                                    </div>
+                                    <div class="title">Добавить в холодильник</div>
+                                 </div>
+                              </div>
+                              <div class="page-content">
+                                 <div class="list" style="margin-bottom: 2%;">
+                                    <ul>
+                                       <li class="item-content item-input">
+                                          <div class="item-inner">
+                                             <div class="item-title item-label">Название продукта</div>
+                                             <div class="item-input-wrap">
+                                                <input type="text" placeholder="Введите название" id="ProductName" value="">
+                                             </div>
+                                          </div>
+                                       </li>
+                                       <li class="item-content item-input">
+                                          <div class="item-inner">
+                                             <div class="item-title item-label">Количество</div>
+                                             <div class="item-input-wrap">
+                                                <input type="number" placeholder="Введите количество" id="Kolitchestvo" value="">
+                                             </div>
+                                          </div>
+                                       </li>
+                                       <li class="item-content item-input">
+                                          <div class="item-inner">
+                                             <div class="item-title item-label">Единица измерения</div>
+                                             <div class="item-input-wrap input-dropdown-wrap">
+                                                <select placeholder="Please choose..." id="Dimention">
+                                                   <option value=" шт" selected>Штуки</option>
+                                                   <option value=" кг">Килограммы</option>
+                                                   <option value=" л">Литры</option>
+                                                   <option value=" г">Граммы</option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                       </li>
+                                       <li class="item-content item-input">
+                                          <div class="item-inner">
+                                             <div class="item-title item-label">Срок годности</div>
+                                             <div class="item-input-wrap">
+                                                <input type="date" placeholder="04.03.1993" id="expdate">
+                                             </div>
+                                          </div>
+                                       </li>
+                                       <li class="item-content" style="display:none">
+                                          <input id="icon_input" value="" type="text">
+                                          <input id="state1" value="1" type="text">
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="block" style="margin-top: 0;">
+                                    <div class="row">
+                                      <div class="col-50">
+                                         <button class="popover-open button button-fill button-large color-green button-raised" href="#" data-popover=".popover-icon" id="popover-opener">Выбрать иконку</button>
+                                      </div>
+                                       <div class="col-50">
+                                          <button class="button button-raised button-fill button-large color-blue popup-close" onclick="addProduct()">Добавить</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="popover popover-icon">
+                                    <div class="popover-inner">
+                                       <div class="block">
+                                          <!-- <p id="icons" class="icon-handler"></p> -->
+                                          <!-- Slides wrapper -->
+                                          <div class="swiper-wrapper">
+                                             <!-- Slides -->
+                                             <div class="swiper-slide icon-handler" id="slide1">Slide 1</div>
+                                             <div class="swiper-slide icon-handler" id="slide2">Slide 2</div>
+                                             <div class="swiper-slide icon-handler" id="slide3">Slide 3</div>
+                                             <div class="swiper-slide icon-handler" id="slide4">Slide 4</div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Second tab -->
+                  <div class="page-content tab" id="tab-2">
+                     <div class="block-title">Список покупок</div>
+                     <div class="list media-list inset">
+                        <ul id="ProducttoBuy">
+                        </ul>
+                     </div>
+                     <!-- Add product to buy item START -->
+                     <a class="popup-open" href="#" data-popup=".popup-buy">
+                     <button class="button button-large button-raised button-fill color-blue" style="width:80%;margin:auto;">Добавить</button>
+                     </a>
+                     <div class="popup popup-buy">
+                        <div class="view">
+                           <div class="page">
+                              <div class="navbar app-navbar-color ClassForRemove" id="popup-navbar1">
+                                 <div class="navbar-inner">
+                                    <div class="left">
+                                       <a href="#" class="link popup-close" style="color:#f2f2f2;"><i class="icon icon-back"></i>&nbsp;Назад</a>
+                                    </div>
+                                    <div class="title">Добавить в список покупок</div>
+                                 </div>
+                              </div>
+                              <div class="page-content">
+                                 <div class="list" style="margin-bottom: 2%;">
+                                    <ul>
+                                       <li class="item-content item-input">
+                                          <div class="item-inner">
+                                             <div class="item-title item-label">Название продукта</div>
+                                             <div class="item-input-wrap">
+                                                <input type="text" placeholder="Введите название" id="buyProductName" value="">
+                                                <span class="input-clear-button"></span>
+                                             </div>
+                                          </div>
+                                       </li>
+                                       <li class="item-content item-input">
+                                          <div class="item-inner">
+                                             <div class="item-title item-label">Количество</div>
+                                             <div class="item-input-wrap">
+                                                <input type="number" placeholder="Введите количество" id="buyKolitchestvo" value="">
+                                                <span class="input-clear-button"></span>
+                                             </div>
+                                          </div>
+                                       </li>
+                                       <li class="item-content item-input">
+                                          <div class="item-inner">
+                                             <div class="item-title item-label">Единица измерения</div>
+                                             <div class="item-input-wrap input-dropdown-wrap">
+                                                <select placeholder="Выберите..." id="buyDimention">
+                                                   <option value=" шт" selected>Штуки</option>
+                                                   <option value=" кг">Килограммы</option>
+                                                   <option value=" л">Литры</option>
+                                                   <option value=" г">Граммы</option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                       </li>
+                                       <li class="item-content" style="display:none">
+                                          <input id="buyicon_input" value="" type="text">
+                                          <input id="state0" value="0" type="text">
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="block" style="margin-top: 0;">
+                                    <div class="row">
+                                      <div class="col-50">
+                                         <button class="popover-open button button-fill button-large color-green button-raised" href="#" data-popover=".buy-popover-icon" id="popover-opener">Выбрать иконку</button>
+                                      </div>
+                                       <div class="col-50">
+                                          <button class="button button-raised button-fill button-large color-blue popup-close" onclick="buyProduct()">Добавить</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="popover buy-popover-icon">
+                                    <div class="popover-inner">
+                                       <div class="block">
+                                          <!-- <p id="icons" class="icon-handler"></p> -->
+                                          <!-- Slides wrapper -->
+                                          <div class="swiper-wrapper">
+                                             <!-- Slides -->
+                                             <div class="swiper-slide icon-handler" id="buyslide1">Slide 1</div>
+                                             <div class="swiper-slide icon-handler" id="buyslide2">Slide 2</div>
+                                             <div class="swiper-slide icon-handler" id="buyslide3">Slide 3</div>
+                                             <div class="swiper-slide icon-handler" id="buyslide4">Slide 4</div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="popup popup-settings">
+                       <div class="view">
+                         <div class="page">
+                           <div class="navbar app-navbar-color ClassForRemove" id="popup-navbar4">
+                             <div class="navbar-inner">
+                               <div class="left">
+                                  <a href="#" class="link popup-close" style="color:#f2f2f2;"><i class="icon icon-back"></i>&nbsp;Назад</a>
+                               </div>
+                               <div class="title">Настройки</div>
+                             </div>
+                           </div>
+                           <div class="page-content">
+
+                             <div class="block block-strong">
+                               <p>Выберите тему:</p>
+                               <div class="row">
+                                 <div class="col-50 bg-color-white demo-theme-picker" id="light">
+                                   <label class="checkbox" id="lightcheck">
+                                     <input type="checkbox" checked disabled>
+                                     <i class="icon-checkbox"></i>
+                                   </label>
+                                 </div>
+                                 <div class="col-50 bg-color-black demo-theme-picker" id="dark">
+                                   <label class="checkbox display-none" id="darkcheck">
+                                     <input type="checkbox" checked disabled>
+                                     <i class="icon-checkbox"></i>
+                                   </label>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Path to Framework7 Library Bundle JS-->
+      <script>document.addEventListener("deviceready", onDeviceReady, false);
+          function onDeviceReady() {
+              navigator.splashscreen.hide();
+          };
+      </script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/framework7.bundle.min.js"></script>
+      <script type="text/javascript" src="js/settings.js"></script>
+      <script type="text/javascript" src="js/custom.js"></script>
+      <script type="text/javascript" src="js/db.js"></script>
+   </body>
+</html>

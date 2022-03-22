@@ -1,0 +1,87 @@
+.app-navbar-color {
+  color:#fff;
+  background: #2196f3;
+}
+i.icon.icon-create {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  background-image: url("../fonts/create.svg");
+  fill: white;
+}
+.fab-fixed-style {
+  position: fixed;
+}
+.tab-padding {
+  padding-bottom: 6em;
+}
+.icon_button {
+  max-width: 28%;
+  margin: .1em;
+  font-size: 2.5em;
+}
+.icon-handler {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.icon-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.red {
+  background-color: #D32F2F;
+  color:#f2f2f2 !important;
+}
+.orange {
+  background-color: #FB8C00;
+  color:#f2f2f2 !important;
+}
+.green {
+  background-color: #43A047;
+  color: #f2f2f2;
+}
+.change-color {
+  color:#f2f2f2 !important;
+}
+.custom-title {
+  display: flex;
+}
+.title-img {
+  max-height:3em;
+  margin-right:1em
+}
+.bought {
+  display: flex;
+  width: 7.5em;
+  position: relative;
+  z-index: 99999;
+}
+.check-img {
+  min-width: 80%;
+}
+.navbar-colored {
+  background-color:#4496f3;
+  color:#f2f2f2;
+}
+.demo-theme-picker {
+  cursor: pointer;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-sizing: border-box;
+  position: relative;
+}
+.demo-theme-picker .checkbox {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.display-none {
+  display:none;
+  transition: 0.3 ease;
+}
+.sheet-color {
+  --f7-sheet-bg-color: #fff;
+}
